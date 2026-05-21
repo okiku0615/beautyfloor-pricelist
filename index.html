@@ -1,0 +1,677 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>おがわクリニック美容フロア｜料金表</title>
+  <style>
+    :root{
+      --bg:#f7f3ee;
+      --card:#fffdf9;
+      --ink:#3a312b;
+      --muted:#7d7168;
+      --gold:#b79a6b;
+      --gold2:#d6c2a0;
+      --line:#eadfce;
+      --pink:#f4e6e2;
+      --gray:#f0ebe5;
+    }
+    *{box-sizing:border-box}
+    body{
+      margin:0;
+      font-family: "Hiragino Kaku Gothic ProN","Yu Gothic",system-ui,-apple-system,sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(214,194,160,.45), transparent 34%),
+        linear-gradient(180deg,#fbf8f4 0%, var(--bg) 100%);
+      color:var(--ink);
+      line-height:1.7;
+    }
+    .wrap{max-width:980px;margin:0 auto;padding:22px 14px 80px}
+    .hero{
+      padding:34px 18px 26px;
+      border:1px solid var(--line);
+      border-radius:28px;
+      background:rgba(255,253,249,.82);
+      box-shadow:0 16px 40px rgba(88,65,42,.08);
+      text-align:center;
+      position:relative;
+      overflow:hidden;
+    }
+    .hero:before,.hero:after{
+      content:"";
+      position:absolute;
+      width:180px;height:180px;border-radius:50%;
+      background:rgba(183,154,107,.11);
+      filter:blur(2px);
+    }
+    .hero:before{left:-80px;top:-70px}
+    .hero:after{right:-80px;bottom:-90px}
+    .brand{font-size:12px;letter-spacing:.22em;color:var(--gold);font-weight:700}
+    h1{
+      margin:8px 0 4px;
+      font-family: Georgia, "Times New Roman", serif;
+      font-weight:400;
+      letter-spacing:.13em;
+      font-size:38px;
+      line-height:1.1;
+    }
+    .subtitle{font-size:14px;color:var(--muted);margin:0}
+    .fee-row{
+      margin:22px auto 0;
+      display:flex;
+      gap:10px;
+      justify-content:center;
+      flex-wrap:wrap;
+    }
+    .pill{
+      border:1px solid var(--line);
+      background:#fff;
+      padding:9px 15px;
+      border-radius:999px;
+      font-size:13px;
+      min-width:132px;
+    }
+    .pill b{font-size:16px;color:var(--ink)}
+    .nav{
+      position:sticky;
+      top:0;
+      z-index:20;
+      display:grid;
+      grid-template-columns:repeat(3,1fr);
+      gap:8px;
+      margin:16px 0;
+      padding:10px;
+      background:rgba(247,243,238,.9);
+      backdrop-filter:blur(10px);
+      border-radius:20px;
+      border:1px solid var(--line);
+    }
+    .nav a{
+      text-decoration:none;
+      color:var(--ink);
+      background:#fffdf9;
+      border:1px solid var(--line);
+      border-radius:16px;
+      padding:10px 4px;
+      font-size:12px;
+      text-align:center;
+      font-weight:700;
+    }
+    section{
+      margin-top:18px;
+      background:var(--card);
+      border:1px solid var(--line);
+      border-radius:26px;
+      padding:19px 14px;
+      box-shadow:0 12px 30px rgba(88,65,42,.06);
+    }
+    .section-head{
+      display:flex;
+      align-items:end;
+      justify-content:space-between;
+      gap:12px;
+      border-bottom:1px solid var(--line);
+      padding-bottom:10px;
+      margin-bottom:12px;
+    }
+    h2{
+      margin:0;
+      font-family:Georgia,"Times New Roman",serif;
+      font-weight:400;
+      letter-spacing:.08em;
+      font-size:24px;
+    }
+    .jp{font-size:12px;color:var(--gold);font-weight:700;white-space:nowrap}
+    .group-title{
+      margin:18px 0 8px;
+      padding:8px 12px;
+      border-radius:14px;
+      background:linear-gradient(90deg,var(--gray),#fff);
+      color:#6c5c4e;
+      font-size:14px;
+      font-weight:700;
+      border-left:4px solid var(--gold);
+    }
+    .grid{display:grid;grid-template-columns:1fr;gap:9px}
+    .item{
+      display:grid;
+      grid-template-columns:1fr auto;
+      gap:10px;
+      align-items:center;
+      padding:12px 12px;
+      border:1px solid var(--line);
+      border-radius:16px;
+      background:linear-gradient(180deg,#fff,#fffaf4);
+    }
+    .item .name{font-weight:700;font-size:14px}
+    .item .note{font-size:11px;color:var(--muted);font-weight:400;margin-top:2px}
+    .price{text-align:right;white-space:nowrap}
+    .price small{display:block;font-size:10px;color:var(--gold);font-weight:700}
+    .price b{font-size:16px}
+    .two{
+      display:grid;
+      grid-template-columns:1fr 1fr;
+      gap:8px;
+      font-size:12px;
+      margin-top:7px;
+    }
+    .mini-price{
+      background:#fff;
+      border:1px solid var(--line);
+      border-radius:12px;
+      padding:8px;
+      text-align:center;
+    }
+    .mini-price span{display:block;color:var(--muted);font-size:10px}
+    .mini-price b{font-size:14px}
+    .cards{
+      display:grid;
+      grid-template-columns:repeat(2,1fr);
+      gap:9px;
+    }
+    .card{
+      border:1px solid var(--line);
+      background:#fff;
+      border-radius:18px;
+      padding:13px 10px;
+      text-align:center;
+    }
+    .card .label{font-weight:700;font-size:13px}
+    .card .from{color:var(--gold);font-size:11px;margin-top:5px}
+    .card .yen{font-size:18px;font-weight:800}
+    .cta{
+      position:fixed;
+      left:0;right:0;bottom:0;
+      background:rgba(255,253,249,.94);
+      border-top:1px solid var(--line);
+      padding:10px 14px calc(10px + env(safe-area-inset-bottom));
+      display:flex;
+      gap:8px;
+      z-index:30;
+      backdrop-filter:blur(10px);
+    }
+    .cta a{
+      flex:1;
+      text-align:center;
+      text-decoration:none;
+      border-radius:999px;
+      padding:12px 10px;
+      font-weight:800;
+      font-size:14px;
+    }
+    .tel{background:linear-gradient(135deg,var(--gold),#c7ad82);color:white}
+    .linebtn{background:#fff;color:var(--ink);border:1px solid var(--gold2)}
+    .notice{
+      color:var(--muted);
+      font-size:11px;
+      margin:18px 2px 0;
+    }
+    @media (min-width:720px){
+      .grid{grid-template-columns:repeat(2,1fr)}
+      .cards{grid-template-columns:repeat(4,1fr)}
+      h1{font-size:50px}
+      .wrap{padding-top:36px}
+      section{padding:24px}
+    }
+    @media (max-width:430px){
+      h1{font-size:32px}
+      .nav{grid-template-columns:repeat(2,1fr)}
+      .cards{grid-template-columns:1fr 1fr}
+      .item{padding:11px 10px}
+    }
+  
+    @media (max-width:520px){
+      #facial .item div[style*="grid-template-columns:1.1fr 1fr 1fr 1.2fr"]{
+        grid-template-columns:130px 90px 90px 110px !important;
+        overflow-x:auto;
+      }
+      #facial .item > div[style*="width:100%"]{
+        overflow-x:auto;
+      }
+    }
+
+  
+    .electro-grid{
+      grid-template-columns:1.4fr 1fr 1fr 1.2fr !important;
+    }
+    .electro-divider{
+      display:none;
+    }
+    .electro-break{
+      grid-column:1 / -1;
+      height:0;
+    }
+
+  </style>
+</head>
+<body>
+  <main class="wrap">
+    <header class="hero">
+      <div class="brand">OGAWA CLINIC BEAUTY FLOOR</div>
+      <h1>PRICE LIST</h1>
+      <p class="subtitle">おがわクリニック美容フロア 料金表</p>
+      <div class="fee-row">
+        <div class="pill">初診料　<b>¥2,500</b></div>
+        <div class="pill">再診料　<b>¥1,000</b></div>
+      </div>
+    
+      </header>
+
+    <nav class="nav">
+      <a href="#facial">フェイシャル</a>
+      <a href="#body">ボディ施術</a>
+      <a href="#ladies">女性脱毛</a>
+      <a href="#mens">男性脱毛</a>
+      <a href="#injection">注射・点滴</a>
+      <a href="#whitening">セルフホワイトニング</a>
+    </nav>
+
+<section id="facial">
+      <div class="section-head"><h2>FACIAL MENU</h2><div class="jp">フェイシャル</div></div>
+
+      <div class="group-title">肌診断</div>
+      <div class="grid">
+        <div class="item">
+          <div>
+            <div class="name">肌診断［ネオヴォワール］</div>
+          </div>
+          <div class="price"><small>1回</small><b>¥3,000</b></div>
+        </div>
+      </div>
+
+      <div class="group-title">導入治療</div>
+      <div class="grid">
+        <div class="item">
+          <div style="width:100%;">
+            <div class="name">エレクトロポレーション［ケアシス］</div>
+
+            <div style="margin-top:14px;display:grid;gap:10px;">
+
+              <div style="display:grid;grid-template-columns:1.6fr 1fr 1fr 1.2fr;gap:8px;align-items:center;border:1px solid #eadfce;border-radius:16px;padding:12px;background:#fff;">
+                <div style="font-weight:700;font-size:13px;">レナトスTaプラス</div>
+                <div class="mini-price"><span>初回</span><b>¥6,000</b></div>
+                <div class="mini-price"><span>1回</span><b>¥8,000</b></div>
+                <div class="mini-price"><span>施術併用時</span><b>¥7,000</b></div>
+              </div>
+
+              <div style="display:grid;grid-template-columns:1.6fr 1fr 1fr 1.2fr;gap:8px;align-items:center;border:1px solid #eadfce;border-radius:16px;padding:12px;background:#fff;">
+                <div style="font-weight:700;font-size:13px;">ペップビュープラス</div>
+                <div class="mini-price"><span>初回</span><b>¥10,000</b></div>
+                <div class="mini-price"><span>1回</span><b>¥12,000</b></div>
+                <div class="mini-price"><span>施術併用時</span><b>¥11,000</b></div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="group-title">ダーマペン治療</div>
+      <div class="grid">
+        <div class="item">
+          <div>
+            <div class="name">ダーマペン4</div>
+          </div>
+          <div class="price"><small>初回</small><b>¥9,800</b><br><small>1回</small><b>¥15,000</b></div>
+        </div>
+
+        <div class="item">
+          <div>
+            <div class="name">ヴェルベットスキン</div>
+          </div>
+          <div class="price"><small>初回</small><b>¥17,000</b><br><small>1回</small><b>¥22,000</b></div>
+        </div>
+      </div>
+
+      <div class="group-title">IPL治療［ステラM22］</div>
+      <div class="grid">
+        <div class="item">
+          <div>
+            <div class="name">フォトフェイシャル</div>
+          </div>
+          <div class="price"><small>初回</small><b>¥9,800</b><br><small>1回</small><b>¥14,000</b></div>
+        </div>
+      </div>
+
+      <div class="group-title">水光注射［ハイコックス］</div>
+      <div class="grid">
+        <div class="item">
+          <div>
+            <div class="name">スキンボトックス［韓国製］</div>
+          </div>
+          <div class="price"><small>初回</small><b>¥29,000</b><br><small>1回</small><b>¥32,000</b></div>
+        </div>
+
+        <div class="item">
+          <div>
+            <div class="name">リズネ</div>
+          </div>
+          <div class="price"><small>初回</small><b>¥39,000</b><br><small>1回</small><b>¥42,000</b></div>
+        </div>
+      </div>
+
+      <div class="group-title">レーザー治療［Q-PLUS R］</div>
+      <div class="grid">
+        <div class="item">
+          <div style="width:100%;">
+            <div class="name">ルビーフラクショナル</div>
+
+            <div style="margin-top:14px;display:grid;gap:10px;">
+
+              <div style="display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:8px;align-items:center;border:1px solid #eadfce;border-radius:16px;padding:12px;background:#fff;">
+                <div style="font-weight:700;font-size:13px;">全顔</div>
+                <div class="mini-price">
+                  <span>初回</span><b>¥29,800</b>
+                </div>
+                <div class="mini-price">
+                  <span>1回</span><b>¥38,000</b>
+                </div>
+              </div>
+
+              <div style="display:grid;grid-template-columns:1.6fr 1fr 1fr;gap:8px;align-items:center;border:1px solid #eadfce;border-radius:16px;padding:12px;background:#fff;">
+                <div style="font-weight:700;font-size:13px;">頬・鼻</div>
+                <div class="mini-price">
+                  <span>初回</span><b>¥20,000</b>
+                </div>
+                <div class="mini-price">
+                  <span>1回</span><b>¥28,000</b>
+                </div>
+              </div>
+
+              <div style="display:grid;grid-template-columns:1.6fr 1fr;gap:8px;align-items:center;border:1px solid #eadfce;border-radius:16px;padding:12px;background:#fff;">
+                <div style="font-weight:700;font-size:13px;">オプション麻酔</div>
+                <div class="mini-price">
+                  <span>1回</span><b>¥1,500</b>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="group-title">レーザー治療［ジェントルレーズプロ］</div>
+      <div class="grid">
+        <div class="item">
+          <div>
+            <div class="name">レーザーフェイシャル</div>
+          </div>
+          <div class="price"><small>初回</small><b>¥9,800</b><br><small>1回</small><b>¥14,000</b></div>
+        </div>
+      </div>
+
+      <div class="group-title">RF治療［デンシティ］</div>
+      <div class="grid">
+        <div class="item">
+          <div>
+            <div class="name">300ショット</div>
+          </div>
+          <div class="price"><small>初回</small><b>¥49,000</b><br><small>1回</small><b>¥58,000</b></div>
+        </div>
+      </div>
+
+      <div class="group-title">ピーリング</div>
+      <div class="grid">
+        <div class="item">
+          <div><div class="name">サリチル酸マクロゴールピーリング</div></div>
+          <div class="price"><small>初回</small><b>¥5,500</b><br><small>1回</small><b>¥7,000</b></div>
+        </div>
+
+        <div class="item">
+          <div><div class="name">マッサージピール</div></div>
+          <div class="price"><small>初回</small><b>¥8,000</b><br><small>1回</small><b>¥11,000</b></div>
+        </div>
+
+        <div class="item">
+          <div><div class="name">ララドクター</div></div>
+          <div class="price"><small>初回</small><b>¥12,000</b><br><small>1回</small><b>¥15,000</b></div>
+        </div>
+      </div>
+    </section>
+<section id="body">
+      <div class="section-head"><h2>BODY MENU</h2><div class="jp">ボディ施術</div></div>
+
+      <div class="group-title">ボトックス治療</div>
+      <div class="grid">
+        <div class="item">
+          <div>
+            <div class="name">脇ボトックス［韓国製］</div>
+          </div>
+          <div class="price"><small>1回</small><b>¥28,000</b></div>
+        </div>
+      </div>
+
+      <div class="group-title">レーザー治療［Q-PLUS R］</div>
+      <div class="grid">
+        <div class="item">
+          <div>
+            <div class="name">ルビーフラクショナル（手背しみ部分）</div>
+          </div>
+          <div class="price"><small>1回</small><b>¥15,000</b></div>
+        </div>
+      </div>
+
+      <div class="group-title">ピーリング</div>
+      <div class="grid">
+
+        <div class="item">
+          <div style="width:100%;">
+            <div class="name">サリチル酸マクロゴールピーリング</div>
+
+            <div style="margin-top:14px;display:grid;gap:10px;">
+
+              <div style="display:grid;grid-template-columns:1.8fr 1fr 1fr;gap:8px;align-items:center;border:1px solid #eadfce;border-radius:16px;padding:12px;background:#fff;">
+                <div style="font-weight:700;font-size:13px;">脇・ひざ</div>
+
+                <div class="mini-price">
+                  <span>初回</span><b>¥5,500</b>
+                </div>
+
+                <div class="mini-price">
+                  <span>1回</span><b>¥7,000</b>
+                </div>
+              </div>
+
+              <div style="display:grid;grid-template-columns:1.8fr 1fr 1fr;gap:8px;align-items:center;border:1px solid #eadfce;border-radius:16px;padding:12px;background:#fff;">
+                <div style="font-weight:700;font-size:13px;">背中上・二の腕・臀部</div>
+
+                <div class="mini-price">
+                  <span>初回</span><b>¥9,000</b>
+                </div>
+
+                <div class="mini-price">
+                  <span>1回</span><b>¥11,000</b>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+<section id="ladies">
+      <div class="section-head"><h2>HAIR REMOVAL</h2><div class="jp">女性脱毛</div></div>
+
+      <div class="group-title">女性脱毛｜顔・うなじ</div>
+      <div class="cards">
+        <div class="card"><div class="label">顔</div><div class="from">初回</div><div class="yen">¥7,000</div></div>
+        <div class="card"><div class="label">うなじ</div><div class="from">1回</div><div class="yen">¥5,000</div></div>
+      </div>
+
+      <div class="group-title">女性脱毛｜ボディ</div>
+      <div class="cards">
+        <div class="card"><div class="label">脇</div><div class="from">1回</div><div class="yen">¥3,000</div></div>
+        <div class="card"><div class="label">ひじ上</div><div class="from">1回</div><div class="yen">¥5,000</div></div>
+        <div class="card"><div class="label">ひじ下</div><div class="from">1回</div><div class="yen">¥5,000</div></div>
+        <div class="card"><div class="label">胸部</div><div class="from">1回</div><div class="yen">¥7,000</div></div>
+        <div class="card"><div class="label">腹部</div><div class="from">1回</div><div class="yen">¥7,000</div></div>
+        <div class="card"><div class="label">背中</div><div class="from">1回</div><div class="yen">¥9,000</div></div>
+        <div class="card"><div class="label">Vライン</div><div class="from">1回</div><div class="yen">¥6,000</div></div>
+        <div class="card"><div class="label">Iライン</div><div class="from">1回</div><div class="yen">¥6,000</div></div>
+        <div class="card"><div class="label">Oライン</div><div class="from">1回</div><div class="yen">¥6,000</div></div>
+        <div class="card"><div class="label">臀部（Oライン除く）</div><div class="from">1回</div><div class="yen">¥6,500</div></div>
+        <div class="card"><div class="label">ひざ上</div><div class="from">1回</div><div class="yen">¥7,000</div></div>
+        <div class="card"><div class="label">ひざ下</div><div class="from">1回</div><div class="yen">¥6,000</div></div>
+      </div>
+
+      <div class="group-title">女性脱毛｜セット</div>
+      <div class="grid">
+        <div class="item">
+          <div><div class="name">VIOセット</div></div>
+          <div class="price"><small>1回</small><b>¥15,000</b></div>
+        </div>
+
+        <div class="item">
+          <div><div class="name">手足スッキリセット</div></div>
+          <div class="price"><small>1回</small><b>¥20,000</b></div>
+        </div>
+
+        <div class="item">
+          <div><div class="name">全身ライト（顔・VIOなし）</div></div>
+          <div class="price"><small>1回</small><b>¥50,000</b></div>
+        </div>
+
+        <div class="item">
+          <div><div class="name">全身フル（顔・VIOあり）</div></div>
+          <div class="price"><small>初回</small><b>¥45,000</b><br><small>1回</small><b>¥55,000</b></div>
+        </div>
+      </div>
+
+      <div class="group-title">女性脱毛｜オプション</div>
+      <div class="grid">
+        <div class="item">
+          <div><div class="name">1ショット追加</div></div>
+          <div class="price"><b>¥550</b></div>
+        </div>
+
+        <div class="item">
+          <div><div class="name">脱毛オプション麻酔（Vライン）</div></div>
+          <div class="price"><b>¥3,300</b></div>
+        </div>
+      </div>
+    </section>
+<section id="mens">
+      <div class="section-head"><h2>MEN'S MENU</h2><div class="jp">男性脱毛</div></div>
+      <div id="mens-face" class="group-title">男性脱毛｜顔・首前・うなじ</div>
+      <div class="cards">
+        <div class="card"><div class="label">顔</div><div class="from">1回</div><div class="yen">¥15,000</div></div>
+        <div class="card"><div class="label">ひげセット</div><div class="from">1回</div><div class="yen">¥13,000</div></div>
+        <div class="card"><div class="label">首前</div><div class="from">1回</div><div class="yen">¥5,000</div></div>
+        <div class="card"><div class="label">うなじ</div><div class="from">1回</div><div class="yen">¥5,000</div></div>
+      </div>
+
+      <div id="mens-body" class="group-title">男性脱毛｜ボディ</div>
+      <div class="cards">
+        <div class="card"><div class="label">脇</div><div class="from">1回</div><div class="yen">¥5,500</div></div>
+        <div class="card"><div class="label">ひじ上</div><div class="from">1回</div><div class="yen">¥6,500</div></div>
+        <div class="card"><div class="label">ひじ下</div><div class="from">1回</div><div class="yen">¥6,500</div></div>
+        <div class="card"><div class="label">胸部</div><div class="from">1回</div><div class="yen">¥8,500</div></div>
+        <div class="card"><div class="label">腹部</div><div class="from">1回</div><div class="yen">¥8,500</div></div>
+        <div class="card"><div class="label">背中</div><div class="from">1回</div><div class="yen">¥11,000</div></div>
+        <div class="card"><div class="label">臀部（Oライン除く）</div><div class="from">1回</div><div class="yen">¥8,000</div></div>
+        <div class="card"><div class="label">ひざ上</div><div class="from">1回</div><div class="yen">¥8,500</div></div>
+        <div class="card"><div class="label">ひざ下</div><div class="from">1回</div><div class="yen">¥7,500</div></div>
+      </div>
+
+      <div id="mens-set" class="group-title">男性脱毛｜セット</div>
+      <div class="grid">
+        <div class="item">
+          <div><div class="name">メンズ手足スッキリセット</div></div>
+          <div class="price"><small>1回</small><b>¥25,000</b></div>
+        </div>
+
+        <div class="item">
+          <div><div class="name">メンズ全身フル（VIOなし）</div></div>
+          <div class="price"><small>初回</small><b>¥60,000</b><br><small>1回</small><b>¥70,000</b></div>
+        </div>
+
+        <div class="item">
+          <div><div class="name">1ショット追加</div></div>
+          <div class="price"><b>¥550</b></div>
+        </div>
+
+      </div>
+
+      <div id="mens-option" class="group-title">男性脱毛｜オプション</div>
+      <div class="grid">
+
+        <div class="item">
+          <div><div class="name">1ショット追加</div></div>
+          <div class="price"><b>¥550</b></div>
+        </div>
+
+        <div class="item">
+          <div><div class="name">脱毛オプション麻酔（ひげ）</div></div>
+          <div class="price"><b>¥3,300</b></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="injection">
+      <div class="section-head"><h2>INJECTION & IV</h2><div class="jp">注射・点滴</div></div>
+
+      <div class="group-title">注射</div>
+      <div class="grid">
+        <div class="item">
+          <div><div class="name">メルスモン注射（1A）</div></div>
+          <div class="price"><small>1回</small><b>¥1,100</b></div>
+        </div>
+
+        <div class="item">
+          <div><div class="name">メルスモン注射（2A）</div></div>
+          <div class="price"><small>1回</small><b>¥1,900</b></div>
+        </div>
+
+        <div class="item">
+          <div><div class="name">白玉注射</div></div>
+          <div class="price"><small>1回</small><b>¥3,000</b></div>
+        </div>
+      </div>
+
+      <div class="group-title">点滴</div>
+      <div class="grid">
+        <div class="item">
+          <div><div class="name">白玉点滴（レギュラー）</div></div>
+          <div class="price"><small>1回</small><b>¥7,000</b></div>
+        </div>
+
+        <div class="item">
+          <div><div class="name">白玉点滴（スーパー）</div></div>
+          <div class="price"><small>1回</small><b>¥8,000</b></div>
+        </div>
+
+        <div class="item">
+          <div><div class="name">高濃度ビタミンC点滴</div></div>
+          <div class="price"><small>1回</small><b>¥12,000</b></div>
+        </div>
+
+        <div class="item">
+          <div><div class="name">G6PD検査</div></div>
+          <div class="price"><small>1回</small><b>¥4,000</b></div>
+        </div>
+      </div>
+    </section>
+
+    <section id="whitening">
+      <div class="section-head"><h2>SELF WHITENING</h2><div class="jp">セルフホワイトニング</div></div>
+
+      <div class="grid">
+        <div class="item">
+          <div><div class="name">セルフホワイトニング</div></div>
+          <div class="price"><small>1回</small><b>¥3,000</b></div>
+        </div>
+      </div>
+    </section>
+
+<p class="notice">
+      ※表示価格はすべて税抜です。内容・価格は変更となる場合がございます。詳しい治療内容や適応については、お電話にてお問い合わせください。
+    </p>
+  </main>
+
+  <div class="cta">
+    <a class="tel" href="tel:0728086661">電話で相談・予約</a>
+    <a class="linebtn" href="#">LINEで問い合わせ</a>
+  </div>
+</body>
+</html>
